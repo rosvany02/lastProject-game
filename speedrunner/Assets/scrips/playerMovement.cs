@@ -23,7 +23,7 @@ public class playerMovement : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                rb.velocity = new Vector3(0f, 10f, 0f);
+                rb.velocity += new Vector3(0f, 6f, 0f);
                 onGrond = false;
             }
         }
