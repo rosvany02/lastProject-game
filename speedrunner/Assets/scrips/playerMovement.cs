@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerMovement : MonoBehaviour {
+    public Rigidbody rb;
+    public GameObject Player;
+    public float forceUp = 2000f;
+    public float forceLeft = 2000f;
+    public bool onGrond;
+
+
+    // Use this for initialization
+    void Start () {
+        onGrond = true;
+    }
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+
+        rb.AddForce(0, 0, forceUp * Time.deltaTime);
+        if (onGrond)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.velocity = new Vector3(0f, 10f, 0f);
+                onGrond = false;
+            }
+        }
+
+            if (Input.GetMouseButton(0))
+        {
+            rb.AddForce(forceLeft * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetMouseButton(1))
+        {
+            rb.AddForce(-forceLeft * Time.deltaTime,0 , 0);
+        }
+        
+    }
+    void OnCollisionEnter(Collision any)
+    {
+        any.gameObject.CompareTag("ground");
+        onGrond = true;
+    }
+}
