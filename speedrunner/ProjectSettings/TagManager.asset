@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - osticle
+  - die
   layers:
   - Default
   - TransparentFX
