@@ -8,11 +8,14 @@ public class playerMovement : MonoBehaviour {
     public float forceUp = 2000f;
     public float forceLeft = 2000f;
     public bool onGrond;
+    public Transform greed;
 
 
     // Use this for initialization
     void Start () {
         onGrond = true;
+        rb.velocity = Vector3.zero;
+        Player.transform.position = greed.position;
     }
 	
 	// Update is called once per frame
@@ -40,7 +43,15 @@ public class playerMovement : MonoBehaviour {
     }
     void OnCollisionEnter(Collision any)
     {
-        any.gameObject.CompareTag("ground");
-        onGrond = true;
+        if( any.gameObject.CompareTag("ground")){
+
+            onGrond = true;
+        }
+        else if(any.gameObject.CompareTag("osticle")){
+            
+            Start();
+        }
+
     }
+
 }
