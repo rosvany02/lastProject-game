@@ -9,6 +9,12 @@ public class playerMovement : MonoBehaviour {
     public float forceLeft = 2000f;
     public bool onGrond;
     public Transform greed;
+    public GameObject completeLevelUI;
+
+    public void CompleteLevel()
+    {
+        completeLevelUI.SetActive(true);
+    }
 
 
     // Use this for initialization
