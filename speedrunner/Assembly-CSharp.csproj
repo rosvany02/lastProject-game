@@ -60,8 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scrips\CameraFolllows.cs" />
+    <Compile Include="Assets\scrips\nextLevel.cs" />
     <Compile Include="Assets\scrips\playerMovement.cs" />
     <Compile Include="Assets\scrips\respawn.cs" />
+    <Compile Include="Assets\scrips\win.cs" />
+    <None Include="Assets\Simple city plain\Read_me.txt" />
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>/Users/student/Desktop/lastProject-game/speedrunner/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
