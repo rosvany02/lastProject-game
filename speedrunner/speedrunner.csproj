@@ -332,7 +332,7 @@
     <Compile Include="Assets\scrips\nextLevel.cs" />
     <Compile Include="Assets\scrips\playerMovement.cs" />
     <Compile Include="Assets\scrips\respawn.cs" />
-    <Compile Include="Assets\win.cs" />
+    <Compile Include="Assets\scrips\win.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Simple city plain\Read_me.txt" />

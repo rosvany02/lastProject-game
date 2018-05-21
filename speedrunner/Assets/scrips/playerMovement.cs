@@ -10,6 +10,11 @@ public class playerMovement : MonoBehaviour {
     public bool onGrond;
     public Transform greed;
     public GameObject completeLevelUI;
+    public AudioSource audioS;
+    public AudioSource audioP;
+    public AudioSource audioL;
+    public AudioSource audioD;
+
 
     public void CompleteLevel()
     {
@@ -22,6 +27,7 @@ public class playerMovement : MonoBehaviour {
         onGrond = true;
         rb.velocity = Vector3.zero;
         Player.transform.position = greed.position;
+        audioD.Play();
     }
 	
 	// Update is called once per frame
@@ -32,6 +38,7 @@ public class playerMovement : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                audioP.Play();
                 rb.velocity += new Vector3(0f, 6f, 0f);
                 onGrond = false;
             }
@@ -39,10 +46,12 @@ public class playerMovement : MonoBehaviour {
 
             if (Input.GetMouseButton(0))
         {
+            audioS.Play();
             rb.AddForce(forceLeft * Time.deltaTime, 0, 0);
         }
         if (Input.GetMouseButton(1))
         {
+            audioS.Play();
             rb.AddForce(-forceLeft * Time.deltaTime,0 , 0);
         }
         
@@ -54,10 +63,13 @@ public class playerMovement : MonoBehaviour {
             onGrond = true;
         }
         else if(any.gameObject.CompareTag("osticle")){
-            
+            audioL.Play();
+            audioD.Play();
             Start();
         }
+        
 
     }
+    
 
 }
